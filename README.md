@@ -18,5 +18,13 @@
 
 ##### This view allows the user to create a task, a description of the task , set a time and date, a reminder and save it. 
 
+#### Calendar View: 
+
+##### This calendar view makes it easier for the user to see all of the tasks happening in the month. 
+
+#### Login and Logout view:
+
+##### When the user entes an valid email and password, it saves it to it’s profile. By clicking on the profile icon the user can close the session and log in again. 
+
 
 
