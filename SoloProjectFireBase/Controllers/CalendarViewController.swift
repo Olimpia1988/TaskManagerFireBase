@@ -18,7 +18,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var monthLabel: UILabel!
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    let uotsideMonthColor: UIColor = #colorLiteral(red: 0.8224461675, green: 0.8175580502, blue: 0.8262042403, alpha: 1)
+    let uotsideMonthColor: UIColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     let monthColor = UIColor.white
     let selectedMonthColor: UIColor = #colorLiteral(red: 0.4773904085, green: 0.3207951784, blue: 0.6541602612, alpha: 1)
     let currentDateSelectedViewColor: UIColor = #colorLiteral(red: 0.6677607894, green: 0.5491837859, blue: 0.9152842164, alpha: 1)

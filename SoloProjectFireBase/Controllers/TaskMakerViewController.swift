@@ -9,6 +9,7 @@
 import UIKit
 import EventKit
 import EventKitUI
+import UserNotifications
 
 class TaskMakerViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class TaskMakerViewController: UIViewController {
     private var taskType = [TaskType]()
     private var selectedTasksType = "\(TaskType.allCases[0])"
     let store = EKEventStore.init()
-    
+    private var task: Tasker!
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
@@ -28,6 +29,7 @@ class TaskMakerViewController: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
         
+        UNUserNotificationCenter.current().delegate = self
         datePicker.datePickerMode = .dateAndTime
         datePicker.addTarget(self, action: #selector(dateChanged(datePicker:text:textField:)), for: .valueChanged)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRec:)))
@@ -62,13 +64,39 @@ class TaskMakerViewController: UIViewController {
             cell.delegate?.getInputser(eventName: cell.eventName.text!, eventNote: cell.eventNotes.text) // to send to view home view controller
             let dateFormatter = DateFormatter()
             print(datePicker.date)
-            dateFormatter.dateFormat =  " yyyy-MM-dd HH:mm "
+            dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm"
             let taskToSet = Tasker(taskTitle: eventName, taskType: description, createdAt: dateFormatter.string(from: datePicker.date), dbreferenceDocumentIdL: "")
             DatabaseManager.postSoloProjectDataBase(task: taskToSet)
-            
             showAlert(title: "Task Added", message: "", style: .alert) { (alert) in
                 self.dismiss(animated: true)
+                
             }
+            
+            //
+            
+            let content = UNMutableNotificationContent()
+            content.sound = UNNotificationSound.default
+            
+            let dateToRemind = datePicker.date
+            let calendar = Calendar.current
+            let hour = calendar.component(.hour, from: dateToRemind)
+            let minutes = calendar.component(.minute, from: dateToRemind)
+            
+            var dateComonents = DateComponents()
+            dateComonents.hour = hour
+            dateComonents.minute = minutes
+            dateComonents.timeZone = TimeZone.current
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComonents, repeats: false)
+             let request = UNNotificationRequest(identifier: "To do list Alert", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request) { (error) in
+                if let error = error {
+                    print("adding notification error: \(error)")
+                } else {
+                    print("successfully added notification")
+                }
+            }
+            
+          
         }
         
     }
@@ -165,3 +193,10 @@ extension TaskMakerViewController: EventCellDelegate {
 }
 
 
+// local notifications: step 4 (optional)
+// only if you want in-app notifications
+extension TaskMakerViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+}

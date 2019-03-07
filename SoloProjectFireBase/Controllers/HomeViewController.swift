@@ -11,6 +11,8 @@ import EventKit
 import EventKitUI
 import FirebaseFirestore
 
+
+
 class HomeViewController: UIViewController  {
     
     private var tasksToSet = [Tasker]() {
@@ -25,8 +27,8 @@ class HomeViewController: UIViewController  {
     var optionsView = OptionsView()
     var selectedDate = Date()
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var selectedDateLabel: UILabel!
     var calendarArray = [Date]() as NSArray
+   
    
     
     @IBAction func calendar(_ sender: UIBarButtonItem) {
@@ -43,25 +45,15 @@ class HomeViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-           getFBData()
-        
-            myCollectionView.delegate = self
+        getFBData()
+        myCollectionView.delegate = self
         myCollectionView.dataSource = self
-  
         self.calendarArray = getCalendar.arrayOfDates()
-        
-//        myCollectionView.scrollToItem(at:IndexPath(item: 2, section: 0), at: .right, animated: false)
-//        UIView.animate(withDuration: 2, delay: 0, options: [.beginFromCurrentState],
-//                       animations: {
-//                        self.dateLabel.frame.origin.x -= 200
-//                        self.view.layoutIfNeeded()
-//        }, completion: nil)
         let today = Date()
         let weekday = Calendar.current.component(.weekday, from: today)
         let month = Calendar.current.component(.month, from: today)
         let date = Calendar.current.component(.day, from: today)
-        dateLabel.text = "\(Calendar.current.weekdaySymbols[month-1]) \(Calendar.current.shortMonthSymbols[month-1]) \(date)"
-     
+        dateLabel.text = "\(Calendar.current.weekdaySymbols[weekday-1]) \(Calendar.current.shortMonthSymbols[month-1]) \(date)"
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,11 +62,9 @@ class HomeViewController: UIViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getFBData()
+      
     }
-    
-  
-   private func getFBData() {
+    private func getFBData() {
     DatabaseManager.firebaseDB.collection(DatabaseKeys.TaskCollectionKey).addSnapshotListener { (snapshot, error) in
         if let error = error {
             print(error)
@@ -83,7 +73,7 @@ class HomeViewController: UIViewController  {
                 let currentTask = Tasker(dict: document.data())
                 self.tasksToSet.append(currentTask)
             }
-            
+            dump(self.tasksToSet)
         }
      }
     
@@ -99,9 +89,10 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as? HomeCell else { return UICollectionViewCell() }
-        cell.taskName.text = self.calendarArray[indexPath.row] as? String
-        cell.textFied.text = tasksToSet[indexPath.row].taskType
+        cell.date.text = self.calendarArray[indexPath.row] as? String
         cell.taskName.text = tasksToSet[indexPath.row].taskTitle
+        cell.textFied.text = tasksToSet[indexPath.row].taskType
+        
         
         
         

@@ -34,7 +34,7 @@ final class Tasks {
       
     }
     
-    private static let filename = "" // get the name of the info plist here
+    private static let filename = "SoloProjectFireBase.plist" // get the name of the info plist here
     private init() {}
 
     static func saveTask() {

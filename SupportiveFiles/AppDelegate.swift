@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if let error = error {
+                print("request authorization error: \(error)")
+            } else if granted {
+                print("autorization granted")
+            } else {
+                print("user denied notifications")
+            }
+        }
+     
         // Override point for customization after application launch.
         FirebaseApp.configure()
         usersession = UserSession()
@@ -42,6 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // present the window
         window?.makeKeyAndVisible()
+        
+     
         
         
         return true

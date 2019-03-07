@@ -16,6 +16,7 @@ class HomeCell: UICollectionViewCell {
     
     weak var delegate: HomeCellDelegate?
     
+    @IBOutlet weak var date: UILabel!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var checkButton: UIButton!
