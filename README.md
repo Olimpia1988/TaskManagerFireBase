@@ -26,5 +26,7 @@
 
 ##### When the user entes an valid email and password, it saves it to it’s profile. By clicking on the profile icon the user can close the session and log in again. 
 
+![loginpage](https://user-images.githubusercontent.com/43769680/53986416-26dd2f00-40ec-11e9-9388-4a862ddb188d.gif)
+
 
 
