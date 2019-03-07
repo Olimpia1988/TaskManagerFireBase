@@ -24,11 +24,12 @@ final class DatabaseManager {
         return db
     }()
     
-    static func postRaceReviewToDatabase(task: Tasker) {
+    static func postSoloProjectDataBase(task: Tasker) {
         var ref: DocumentReference? = nil
         ref = firebaseDB.collection(DatabaseKeys.TaskCollectionKey).addDocument(data: [
             "taskName"    : task.taskTitle,
-            "taskType"  : task.taskTitle,
+            "taskType"  : task.taskType,
+            "taskTime" : task.createdAt,
             "dbReference"  : task.dbreferenceDocumentIdL
             ], completion: { (error) in
                 if let error = error {

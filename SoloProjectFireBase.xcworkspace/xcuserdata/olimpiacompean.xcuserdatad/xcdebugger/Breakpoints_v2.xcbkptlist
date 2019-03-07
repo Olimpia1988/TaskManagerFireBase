@@ -73,8 +73,8 @@
                   symbolName = "SoloProjectFireBase.UserSession.createNewAccount(email: Swift.String, password: Swift.String) -&gt; ()"
                   moduleName = "SoloProjectFireBase"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/olimpiacompean/Desktop/SoloProjectFireBase/SoloProjectFireBase/Firebase%20Utilities/UserSession.swift"
-                  timestampString = "573517958.186487"
+                  urlString = "file:///Users/olimpiacompean/Desktop/TaskManagerFireBase/SoloProjectFireBase/Firebase%20Utilities/UserSession.swift"
+                  timestampString = "573666741.407614"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -88,8 +88,8 @@
                   symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SoloProjectFireBase.UserSession.createNewAccount(email: Swift.String, password: Swift.String) -&gt; ()"
                   moduleName = "SoloProjectFireBase"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/olimpiacompean/Desktop/SoloProjectFireBase/SoloProjectFireBase/Firebase%20Utilities/UserSession.swift"
-                  timestampString = "573517958.188323"
+                  urlString = "file:///Users/olimpiacompean/Desktop/TaskManagerFireBase/SoloProjectFireBase/Firebase%20Utilities/UserSession.swift"
+                  timestampString = "573666741.409984"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
@@ -358,16 +358,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SoloProjectFireBase/Cells/EventCell.swift"
+            timestampString = "573597556.791322"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "EventCellDelegate"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SoloProjectFireBase/Controllers/TaskMakerViewController.swift"
-            timestampString = "573518013.257658"
+            timestampString = "573670332.862842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "dateChanged(datePicker:text:textField:)"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "saveTask()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SoloProjectFireBase/Controllers/HomeViewController.swift"
+            timestampString = "573671554.032315"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

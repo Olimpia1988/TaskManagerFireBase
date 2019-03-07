@@ -13,9 +13,7 @@ import EventKitUI
 class TaskMakerViewController: UIViewController {
     
     private var datePicker = UIDatePicker()
-    
-    var example : Tasker!
-    
+    var example: Tasker!
     private var usersession: UserSession!
     private var taskType = [TaskType]()
     private var selectedTasksType = "\(TaskType.allCases[0])"
@@ -29,18 +27,17 @@ class TaskMakerViewController: UIViewController {
     
     override func viewDidLoad() {
       super.viewDidLoad()
-        datePicker = UIDatePicker()
+        
         datePicker.datePickerMode = .dateAndTime
         datePicker.addTarget(self, action: #selector(dateChanged(datePicker:text:textField:)), for: .valueChanged)
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRec:)))
         view.addGestureRecognizer(tapGesture)
+       
+        saveButton.addTarget(self, action: #selector(saveTask), for: .touchUpInside)
         
         tableView.delegate = self
         tableView.dataSource = self
-       
-        
-        store.requestAccess(to: .event) { (granted, error) in
+       store.requestAccess(to: .event) { (granted, error) in
             if let error = error {
                 self.showAlert(title: "Error accessing calendar", message: error.localizedDescription, actionTitle: "Ok")
                 print("request acces error: \(error)")
@@ -52,16 +49,47 @@ class TaskMakerViewController: UIViewController {
         }
     }
     
+    @objc func saveTask() {
+        let indexPath = IndexPath(item: 1, section: 0)
+        if let cell = tableView.cellForRow(at: indexPath) as? EventCell {
+            guard let eventName = cell.eventName.text,
+                let description = cell.eventNotes.text,
+                !eventName.isEmpty,
+                !description.isEmpty else {
+                     showAlert(title: "Missing Fields", message: "Name and description of the task in required", actionTitle: "Try Again")
+                    return
+            }
+            cell.delegate?.getInputser(eventName: cell.eventName.text!, eventNote: cell.eventNotes.text) // to send to view home view controller
+            let dateFormatter = DateFormatter()
+            print(datePicker.date)
+            dateFormatter.dateFormat =  " yyyy-MM-dd HH:mm "
+            let taskToSet = Tasker(taskTitle: eventName, taskType: description, createdAt: dateFormatter.string(from: datePicker.date), dbreferenceDocumentIdL: "")
+            DatabaseManager.postSoloProjectDataBase(task: taskToSet)
+            
+            showAlert(title: "Task Added", message: "", style: .alert) { (alert) in
+                self.dismiss(animated: true)
+            }
+        }
+        
+    }
+    
     @objc func viewTapped(gestureRec: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
     @objc func dateChanged(datePicker: UIDatePicker, text: String, textField: UITextField) {
-       let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        textField.text = dateFormatter.string(from: datePicker.date)
-        view.endEditing(true)
-        
+        let indexPath = IndexPath(item: 2, section: 0) // index 2 refers to the EventSetupCell
+        if let cell = tableView.cellForRow(at: indexPath) as? EventSetupCell { // we are casting to an EventSetupCell
+            let dateFormatter = DateFormatter()
+            print(datePicker.date)
+            dateFormatter.dateFormat =  " yyyy-MM-dd HH:mm "
+            if cell.startTextField.isFirstResponder {
+                cell.startTextField.text = dateFormatter.string(from: datePicker.date)
+            } else {
+                cell.endTextField.text = dateFormatter.string(from: datePicker.date)
+            }
+        }
+
     }
     
     @IBAction func deleteAction(_ sender: UIButton) {
@@ -87,28 +115,11 @@ extension TaskMakerViewController: UITableViewDelegate, UITableViewDataSource {
       
         } else if indexPath.row == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? EventCell else { return UITableViewCell() }
-
-            if saveButton.isEnabled {
-                // here is where things happend
-                guard let eventName = cell.eventName.text,
-                let description = cell.eventNotes.text,
-                !eventName.isEmpty,
-                !description.isEmpty else {
-                   showAlert(title: "Missing Fiel", message: "", actionTitle: "OK")
-                  
-                    return cell }
-            cell.delegate?.getInputser(eventName: eventName, eventNote: description)
-            cell.delegate = self
-             showAlert(title: "Missing Fields", message: "Task name requieres", actionTitle: "Try again")
-            if eventName.isEmpty && description.isEmpty == false {
-                    let taskToCreate = Tasker(taskTitle: eventName , taskType: description, dbreferenceDocumentIdL: "")
-                    DatabaseManager.postRaceReviewToDatabase(task: taskToCreate)
-            } else {
-                  showAlert(title: "Task Created", message: "", actionTitle: "Ok")
-                        self.dismiss(animated: true)
-            }
             
-            }
+        
+           
+          return cell
+            
 } else if indexPath.row == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventSetupCell", for: indexPath) as? EventSetupCell else { return UITableViewCell()}
             
@@ -117,9 +128,7 @@ extension TaskMakerViewController: UITableViewDelegate, UITableViewDataSource {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy"
             
-            //come back here!!
-            dateChanged(datePicker: datePicker, text: dateFormatter.string(from: datePicker.date), textField: cell.startTextField!)
-            dateChanged(datePicker: datePicker, text: dateFormatter.string(from: datePicker.date), textField: cell.endTextField)
+            print("\(dateFormatter.dateFormat)")
 
       
             return cell
@@ -154,4 +163,5 @@ extension TaskMakerViewController: EventCellDelegate {
     
     
 }
+
 

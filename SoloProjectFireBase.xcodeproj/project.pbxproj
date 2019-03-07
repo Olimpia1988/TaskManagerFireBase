@@ -30,6 +30,7 @@
 		120D54E02224E23300604AD6 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D54DF2224E23300604AD6 /* AppError.swift */; };
 		120D54E32224F04100604AD6 /* SingleTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D54E22224F04100604AD6 /* SingleTask.swift */; };
 		1215EB0A222ED3F200541D57 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1215EB09222ED3F200541D57 /* CalendarCell.swift */; };
+		1267FC8E22318A0A008167E5 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267FC8D22318A0A008167E5 /* Reminder.swift */; };
 		126AC35D222BA71000C653EE /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126AC35C222BA71000C653EE /* HomeCell.swift */; };
 		126AC35F222CDE1600C653EE /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126AC35E222CDE1600C653EE /* CalendarModel.swift */; };
 		1271BE6322271AF7006D462E /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1271BE6222271AF7006D462E /* EventCell.swift */; };
@@ -46,6 +47,7 @@
 		12B2F9F2222656CD007C03AD /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2F9F1222656CD007C03AD /* OptionsViewController.swift */; };
 		12B2F9F422265702007C03AD /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2F9F322265702007C03AD /* OptionsView.swift */; };
 		12B2F9F6222661C9007C03AD /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2F9F5222661C9007C03AD /* TasksView.swift */; };
+		12E352EE22306C5F000F7F6E /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E352ED22306C5F000F7F6E /* DataPersistanceManager.swift */; };
 		812F848779079CE910DC37A0 /* Pods_SoloProjectFireBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C4E0994E8C01F65AD9DD5D /* Pods_SoloProjectFireBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,7 @@
 		120D54DF2224E23300604AD6 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		120D54E22224F04100604AD6 /* SingleTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTask.swift; sourceTree = "<group>"; };
 		1215EB09222ED3F200541D57 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		1267FC8D22318A0A008167E5 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		126AC35C222BA71000C653EE /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		126AC35E222CDE1600C653EE /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 		1271BE6222271AF7006D462E /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		12B2F9F1222656CD007C03AD /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		12B2F9F322265702007C03AD /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		12B2F9F5222661C9007C03AD /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		12E352ED22306C5F000F7F6E /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		3AE5DF8C4887E8AB3402BEAE /* Pods-SoloProjectFireBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoloProjectFireBase.debug.xcconfig"; path = "Target Support Files/Pods-SoloProjectFireBase/Pods-SoloProjectFireBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C00CB551019F010BE3515ACF /* Pods-SoloProjectFireBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoloProjectFireBase.release.xcconfig"; path = "Target Support Files/Pods-SoloProjectFireBase/Pods-SoloProjectFireBase.release.xcconfig"; sourceTree = "<group>"; };
 		E4C4E0994E8C01F65AD9DD5D /* Pods_SoloProjectFireBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoloProjectFireBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				120D54CD22246CDF00604AD6 /* TaskerModel.swift */,
+				1267FC8D22318A0A008167E5 /* Reminder.swift */,
+				12E352ED22306C5F000F7F6E /* DataPersistanceManager.swift */,
 				1271BE6E2228629D006D462E /* TaskType.swift */,
 				1271BE6C22285531006D462E /* EventModel.swift */,
 				126AC35E222CDE1600C653EE /* CalendarModel.swift */,
@@ -431,6 +437,8 @@
 				1271BE6D22285531006D462E /* EventModel.swift in Sources */,
 				12B2F9E72225E989007C03AD /* TasksTabBarController.swift in Sources */,
 				1215EB0A222ED3F200541D57 /* CalendarCell.swift in Sources */,
+				1267FC8E22318A0A008167E5 /* Reminder.swift in Sources */,
+				12E352EE22306C5F000F7F6E /* DataPersistanceManager.swift in Sources */,
 				120D54D222247B9800604AD6 /* StorageKeys.swift in Sources */,
 				120D54CE22246CDF00604AD6 /* TaskerModel.swift in Sources */,
 				120D54D0222471A000604AD6 /* StorageManager.swift in Sources */,
@@ -588,7 +596,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Xcode.SoloProjectFireBase;
+				PRODUCT_BUNDLE_IDENTIFIER = solo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -607,7 +615,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Xcode.SoloProjectFireBase;
+				PRODUCT_BUNDLE_IDENTIFIER = solo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

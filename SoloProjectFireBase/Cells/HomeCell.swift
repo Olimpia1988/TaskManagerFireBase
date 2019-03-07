@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol HomeCellDelegate: AnyObject {
+    func getDataFromUser(taskName: String, taskDescription: String)
+}
+
 class HomeCell: UICollectionViewCell {
+    
+    weak var delegate: HomeCellDelegate?
     
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var taskName: UILabel!
