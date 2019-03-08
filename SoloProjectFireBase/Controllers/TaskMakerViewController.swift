@@ -64,7 +64,7 @@ class TaskMakerViewController: UIViewController {
 
             let dateFormatter = DateFormatter()
             print(datePicker.date)
-            dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm"
+            dateFormatter.dateFormat =  "MM/dd"
             let taskToSet = Tasker(taskTitle: eventName, taskType: description, createdAt: dateFormatter.string(from: datePicker.date), dbreferenceDocumentIdL: "")
             DatabaseManager.postSoloProjectDataBase(task: taskToSet)
             showAlert(title: "Task Added", message: "", style: .alert) { (alert) in

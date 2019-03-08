@@ -26,7 +26,7 @@ struct Tasker: Codable, Equatable {
     init(dict: [String: Any]) {
         self.taskTitle = dict["taskName"] as? String ?? "no task name"
         self.taskType = dict["taskType"] as? String ?? "no task type"
-        self.createdAt = dict["createdTime"] as? String ?? "no creartion time"
+        self.createdAt = dict["taskTime"] as? String ?? "no creartion time"
         self.dbreferenceDocumentIdL = dict["dbReference"] as? String ?? "no dbReference"
     }
     

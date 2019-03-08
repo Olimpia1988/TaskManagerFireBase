@@ -28,7 +28,6 @@
 		120D54DB2224DD0700604AD6 /* TaskMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D54DA2224DD0700604AD6 /* TaskMakerViewController.swift */; };
 		120D54DE2224E20C00604AD6 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D54DD2224E20C00604AD6 /* NetworkHelper.swift */; };
 		120D54E02224E23300604AD6 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D54DF2224E23300604AD6 /* AppError.swift */; };
-		120D54E32224F04100604AD6 /* SingleTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D54E22224F04100604AD6 /* SingleTask.swift */; };
 		1215EB0A222ED3F200541D57 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1215EB09222ED3F200541D57 /* CalendarCell.swift */; };
 		1267FC8E22318A0A008167E5 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267FC8D22318A0A008167E5 /* Reminder.swift */; };
 		126AC35D222BA71000C653EE /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126AC35C222BA71000C653EE /* HomeCell.swift */; };
@@ -77,7 +76,6 @@
 		120D54DA2224DD0700604AD6 /* TaskMakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMakerViewController.swift; sourceTree = "<group>"; };
 		120D54DD2224E20C00604AD6 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		120D54DF2224E23300604AD6 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		120D54E22224F04100604AD6 /* SingleTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTask.swift; sourceTree = "<group>"; };
 		1215EB09222ED3F200541D57 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		1267FC8D22318A0A008167E5 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		126AC35C222BA71000C653EE /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 		120D54E12224F02D00604AD6 /* EventKit */ = {
 			isa = PBXGroup;
 			children = (
-				120D54E22224F04100604AD6 /* SingleTask.swift */,
 			);
 			name = EventKit;
 			path = "Network Services";
@@ -435,7 +432,6 @@
 				120D547A22225A2000604AD6 /* AppDelegate.swift in Sources */,
 				126AC35D222BA71000C653EE /* HomeCell.swift in Sources */,
 				1271BE6B22274476006D462E /* ImageCatch.swift in Sources */,
-				120D54E32224F04100604AD6 /* SingleTask.swift in Sources */,
 				120D54DB2224DD0700604AD6 /* TaskMakerViewController.swift in Sources */,
 				120D54C6222468E900604AD6 /* UserSession.swift in Sources */,
 				1271BE6522271FD1006D462E /* EventSetupCell.swift in Sources */,

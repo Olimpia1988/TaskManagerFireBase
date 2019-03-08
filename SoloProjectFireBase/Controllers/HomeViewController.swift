@@ -27,7 +27,7 @@ class HomeViewController: UIViewController  {
     var optionsView = OptionsView()
     var selectedDate = Date()
     @IBOutlet weak var dateLabel: UILabel!
-    var calendarArray = [Date]() as NSArray
+    //var calendarArray = [Date]() as NSArray
    
    
     
@@ -48,7 +48,7 @@ class HomeViewController: UIViewController  {
         getFBData()
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
-        self.calendarArray = getCalendar.arrayOfDates()
+      //  self.calendarArray = getCalendar.arrayOfDates()
         let today = Date()
         let weekday = Calendar.current.component(.weekday, from: today)
         let month = Calendar.current.component(.month, from: today)
@@ -90,22 +90,7 @@ class HomeViewController: UIViewController  {
 //        if let cell = myCollectionView.cellForItem(at: indexPath) as? HomeCell {
 //            let eventName = cell.taskName.text
 //            let description = cell.textFied.text
-//            let date = cell.date.text
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-//            let taskToDelete = Tasker(taskTitle: eventName!, taskType: description!, createdAt: date!, dbreferenceDocumentIdL: "")
-//            DatabaseManager.firebaseDB
-//                .collection(DatabaseKeys.TaskCollectionKey)
-//                .document(taskToDelete.dbreferenceDocumentIdL)
-//                .delete { (error) in
-//                    if let error = error {
-//                        print("failed to delete with error: \(error)")
-//                    } else {
-//                        print("deleted successfully")
-//                    }
-//            }
-//        }
-//    }
+
 
     
     private func getFBData() {
@@ -150,7 +135,7 @@ extension HomeViewController: UICollectionViewDataSource {
         guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as? HomeCell else { return UICollectionViewCell() }
         let tasker = tasksToSet[indexPath.row]
         cell.configureCell(tasker: tasker)
-        cell.date.text = self.calendarArray[indexPath.row] as? String
+        cell.date.text = tasker.createdAt
         cell.delegate = self
         return cell
     }
