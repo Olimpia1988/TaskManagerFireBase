@@ -27,7 +27,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        imagePickerController.delegate = self
+        
      usersession = (UIApplication.shared.delegate as! AppDelegate).usersession
         storageManager = (UIApplication.shared.delegate as! AppDelegate).storageManager
         usersession.usersessionSignOutDelegate = self
@@ -65,7 +66,8 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func pickerFoto(_ sender: UIButton) {
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "slflksdf", message: "dfndfnvdfv", preferredStyle: .actionSheet)
+        
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
             self.imagePickerController.sourceType = .camera
             self.showImagePickerController()
@@ -80,6 +82,8 @@ class ProfileViewController: UIViewController {
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
             self.present(alertController, animated: true, completion: nil)
         }
+        
+        //present(alertController, animated: true, completion: nil)
         
     }
     

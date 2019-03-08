@@ -11,19 +11,16 @@ import EventKit
 import EventKitUI
 import UserNotifications
 
+
 class TaskMakerViewController: UIViewController {
     
     private var datePicker = UIDatePicker()
     var example: Tasker!
     private var usersession: UserSession!
-    private var taskType = [TaskType]()
-    private var selectedTasksType = "\(TaskType.allCases[0])"
     let store = EKEventStore.init()
     private var task: Tasker!
-    
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
-    @IBOutlet weak var newTaskLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -51,6 +48,9 @@ class TaskMakerViewController: UIViewController {
         }
     }
     
+    
+
+    
     @objc func saveTask() {
         let indexPath = IndexPath(item: 1, section: 0)
         if let cell = tableView.cellForRow(at: indexPath) as? EventCell {
@@ -61,7 +61,7 @@ class TaskMakerViewController: UIViewController {
                      showAlert(title: "Missing Fields", message: "Name and description of the task in required", actionTitle: "Try Again")
                     return
             }
-            cell.delegate?.getInputser(eventName: cell.eventName.text!, eventNote: cell.eventNotes.text) // to send to view home view controller
+
             let dateFormatter = DateFormatter()
             print(datePicker.date)
             dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm"
@@ -71,8 +71,6 @@ class TaskMakerViewController: UIViewController {
                 self.dismiss(animated: true)
                 
             }
-            
-            //
             
             let content = UNMutableNotificationContent()
             content.sound = UNNotificationSound.default
@@ -152,13 +150,7 @@ extension TaskMakerViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventSetupCell", for: indexPath) as? EventSetupCell else { return UITableViewCell()}
             
             cell.startTextField.inputView = datePicker
-            cell.endTextField.inputView = datePicker
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM/dd/yyyy"
-            
-            print("\(dateFormatter.dateFormat)")
 
-      
             return cell
             
         } else if indexPath.row == 3 {
@@ -166,11 +158,7 @@ extension TaskMakerViewController: UITableViewDelegate, UITableViewDataSource {
           
             return cell
             
-            
-        } else if indexPath.row == 4 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath) as? NoteCell else { return UITableViewCell() }
-          
-            return cell 
+
         }
         
         return UITableViewCell()

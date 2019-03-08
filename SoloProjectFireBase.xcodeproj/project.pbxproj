@@ -48,6 +48,8 @@
 		12B2F9F422265702007C03AD /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2F9F322265702007C03AD /* OptionsView.swift */; };
 		12B2F9F6222661C9007C03AD /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2F9F5222661C9007C03AD /* TasksView.swift */; };
 		12E352EE22306C5F000F7F6E /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E352ED22306C5F000F7F6E /* DataPersistanceManager.swift */; };
+		12E8F7112232DD1400FB6B52 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8F7102232DD1400FB6B52 /* EditView.swift */; };
+		12E8F7132232DDDC00FB6B52 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8F7122232DDDC00FB6B52 /* EditViewController.swift */; };
 		812F848779079CE910DC37A0 /* Pods_SoloProjectFireBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C4E0994E8C01F65AD9DD5D /* Pods_SoloProjectFireBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,8 @@
 		12B2F9F322265702007C03AD /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		12B2F9F5222661C9007C03AD /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		12E352ED22306C5F000F7F6E /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
+		12E8F7102232DD1400FB6B52 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		12E8F7122232DDDC00FB6B52 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		3AE5DF8C4887E8AB3402BEAE /* Pods-SoloProjectFireBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoloProjectFireBase.debug.xcconfig"; path = "Target Support Files/Pods-SoloProjectFireBase/Pods-SoloProjectFireBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C00CB551019F010BE3515ACF /* Pods-SoloProjectFireBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoloProjectFireBase.release.xcconfig"; path = "Target Support Files/Pods-SoloProjectFireBase/Pods-SoloProjectFireBase.release.xcconfig"; sourceTree = "<group>"; };
 		E4C4E0994E8C01F65AD9DD5D /* Pods_SoloProjectFireBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoloProjectFireBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +157,7 @@
 			children = (
 				120D54D622248DBE00604AD6 /* TaskStoryBoard.storyboard */,
 				120D54912222687500604AD6 /* LoginView.swift */,
+				12E8F7102232DD1400FB6B52 /* EditView.swift */,
 				12B2F9F322265702007C03AD /* OptionsView.swift */,
 				12B2F9F5222661C9007C03AD /* TasksView.swift */,
 				120D548F2222608500604AD6 /* loginView.xib */,
@@ -165,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				120D54952223164600604AD6 /* LoginViewController.swift */,
+				12E8F7122232DDDC00FB6B52 /* EditViewController.swift */,
 				1204C12322299BD400C4018D /* CalendarViewController.swift */,
 				12B2F9E62225E989007C03AD /* TasksTabBarController.swift */,
 				120D54D82224DCAA00604AD6 /* HomeViewController.swift */,
@@ -422,6 +428,7 @@
 				1271BE6722272433006D462E /* ReminderCell.swift in Sources */,
 				1204C12422299BD400C4018D /* CalendarViewController.swift in Sources */,
 				1271BE69222735FB006D462E /* NoteCell.swift in Sources */,
+				12E8F7112232DD1400FB6B52 /* EditView.swift in Sources */,
 				120D54E02224E23300604AD6 /* AppError.swift in Sources */,
 				12B2F9E92225EF07007C03AD /* ProfileViewController.swift in Sources */,
 				12B2F9F2222656CD007C03AD /* OptionsViewController.swift in Sources */,
@@ -432,6 +439,7 @@
 				120D54DB2224DD0700604AD6 /* TaskMakerViewController.swift in Sources */,
 				120D54C6222468E900604AD6 /* UserSession.swift in Sources */,
 				1271BE6522271FD1006D462E /* EventSetupCell.swift in Sources */,
+				12E8F7132232DDDC00FB6B52 /* EditViewController.swift in Sources */,
 				1271BE6F2228629D006D462E /* TaskType.swift in Sources */,
 				120D54D92224DCAA00604AD6 /* HomeViewController.swift in Sources */,
 				1271BE6D22285531006D462E /* EventModel.swift in Sources */,
