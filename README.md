@@ -28,5 +28,8 @@
 
 ![loginpage](https://user-images.githubusercontent.com/43769680/53986416-26dd2f00-40ec-11e9-9388-4a862ddb188d.gif)
 
+##### The user can edit and delete the created task 
+
+
 
 
